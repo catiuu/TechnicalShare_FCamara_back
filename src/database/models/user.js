@@ -8,6 +8,16 @@ module.exports = (sequelize, DataTypes) => {
         through: models.UserTechnology,
         foreignKey: "userId",
       });
+
+      User.belongsToMany(models.User, {
+        through: models.Schedule,
+        foreignKey: "userId",
+      });
+
+      User.belongsToMany(models.User, {
+        through: models.Schedule,
+        foreignKey: "mentorId",
+      });
     }
   }
   User.init(
