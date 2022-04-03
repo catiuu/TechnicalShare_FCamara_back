@@ -15,6 +15,7 @@ module.exports = {
       email: {
         type: Sequelize.STRING,
         allowNull: false,
+        unique: true,
       },
       jobTitle: {
         type: Sequelize.STRING,
