@@ -13,16 +13,16 @@ module.exports = (sequelize, DataTypes) => {
   }
   Schedule.init(
     {
-      id_user: DataTypes.INTEGER,
-      id_mentor: DataTypes.INTEGER,
+      userId: DataTypes.INTEGER,
+      mentorId: DataTypes.INTEGER,
       subject: DataTypes.STRING,
-      initial_date: DataTypes.DATE,
-      final_date: DataTypes.DATE,
+      initialDate: DataTypes.DATE,
+      finalDate: DataTypes.DATE,
     },
     {
       sequelize,
       modelName: "Schedule",
     },
   );
-  return Calendar;
+  return Schedule;
 };

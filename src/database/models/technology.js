@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Technology.init(
     {
-      Name: DataTypes.STRING,
+      name: DataTypes.STRING,
     },
     {
       sequelize,

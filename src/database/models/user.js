@@ -11,11 +11,13 @@ module.exports = (sequelize, DataTypes) => {
 
       User.belongsToMany(models.User, {
         through: models.Schedule,
+        as: "User",
         foreignKey: "userId",
       });
 
       User.belongsToMany(models.User, {
         through: models.Schedule,
+        as: "Mentor",
         foreignKey: "mentorId",
       });
     }

@@ -39,3 +39,12 @@
 ```sh
     npx sequelize db:seed:all
 ```
+
+# Dia 04/04
+
+- [x] Melhorando a estrutura do projeto com criação do diretório API e inclusão das pastas routes, controllers, services.
+
+- [x] Criação de rodas '/admin' para visualização das tabelas no Postman.  
+      obs: Usada somente para fins de desenvolvimento, uma vez que facilita a visualização do que já está inserido no BD.
+
+- [] EM DESENVOLVIMENTO: Até amanhã concluo as queries que iremos usar para fazer a funcionalidades do projeto (login, busca funcionário, agendamentos);
