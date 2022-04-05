@@ -48,3 +48,8 @@
       obs: Usada somente para fins de desenvolvimento, uma vez que facilita a visualização do que já está inserido no BD.
 
 - [] EM DESENVOLVIMENTO: Até amanhã concluo as queries que iremos usar para fazer a funcionalidades do projeto (login, busca funcionário, agendamentos);
+
+---
+**Repositório de Frontend:** https://github.com/catiuu/TechnicalShare_FCamara_front
+
+**URL da aplicação funcionando**:
