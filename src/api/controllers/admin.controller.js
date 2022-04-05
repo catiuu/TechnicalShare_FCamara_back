@@ -26,6 +26,12 @@ class Controller {
 
     res.json(response);
   }
+
+  async fetchAllUserAndTechs(req, res) {
+    const response = await AdminService.fetchAllUserAndTechs();
+
+    res.json(response);
+  }
 }
 
 const AdminController = new Controller();
