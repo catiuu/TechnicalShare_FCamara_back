@@ -1,11 +1,5 @@
-const { QueryTypes } = require("sequelize");
-const {
-  User,
-  Technology,
-  Schedule,
-  UserTechnology,
-  sequelize,
-} = require("../../database/models");
+//const { QueryTypes } = require("sequelize");
+const { User, Skill, UserSkill, sequelize } = require("../../database/models");
 
 class Service {
   async fetchAllUsers() {
@@ -17,42 +11,32 @@ class Service {
     return users;
   }
 
-  async fetchAllTech() {
-    const techs = await Technology.findAll({
+  async fetchAllSkills() {
+    const skills = await Skill.findAll({
       attributes: {
         exclude: ["createdAt", "updatedAt"],
       },
     });
-    return techs;
+    return skills;
   }
 
-  async fetchAllSchedules() {
-    const schedules = await Schedule.findAll({
+  async fetchAllUserSkills() {
+    const userSkills = await User.findAll({
       attributes: {
+        //include: ["id", "fullName", "email", "jobTitle", "aboutMe"],
         exclude: ["createdAt", "updatedAt"],
       },
-    });
-    return schedules;
-  }
-
-  async fetchAllUsersTech() {
-    const usersTechs = await UserTechnology.findAll({
-      attributes: {
-        exclude: ["createdAt", "updatedAt"],
+      include: {
+        model: Skill,
+        through: {
+          attributes: [],
+        },
+        attributes: {
+          exclude: ["createdAt", "updatedAt"],
+        },
       },
     });
-    return usersTechs;
-  }
-
-  async fetchAllUserAndTechs() {
-    const userAndTechs = await User.findAll({
-      attributes: {
-        include: ["id", "name", "email", "jobTitle"],
-        exclude: ["createdAt", "updatedAt"],
-      },
-      include: Technology,
-    });
-    return userAndTechs;
+    return userSkills;
   }
 }
 

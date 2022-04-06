@@ -2,7 +2,7 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable("UserTechnology", {
+    await queryInterface.createTable("UserSkill", {
       userId: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -11,11 +11,11 @@ module.exports = {
           key: "id", // key in Target table that we're referencing
         },
       },
-      technologyId: {
+      skillId: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         references: {
-          model: "Technologies", // name of Target table
+          model: "Skills", // name of Target table
           key: "id", // key in Target table that we're referencing
         },
       },
@@ -33,6 +33,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable("UserTechnology");
+    await queryInterface.dropTable("UserSkill");
   },
 };

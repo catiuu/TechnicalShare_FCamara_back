@@ -3,7 +3,7 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.bulkInsert(
-      "Technologies",
+      "Skills",
       [
         {
           name: "Javascript",
@@ -47,12 +47,18 @@ module.exports = {
         {
           name: "CSS",
         },
+        {
+          name: "Scrum",
+        },
+        {
+          name: "VTex",
+        },
       ],
       {},
     );
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.bulkDelete("Technologies", null, {});
+    await queryInterface.bulkDelete("Skills", null, {});
   },
 };
