@@ -40,6 +40,34 @@
     npx sequelize db:seed:all
 ```
 
----
-
 **Repositório de Frontend:** https://github.com/catiuu/TechnicalShare_FCamara_front
+
+**URL da aplicação funcionando**:
+
+## Contribuídoras
+
+<table>
+    <tr align="center">
+        <td>
+            <img src="https://avatars.githubusercontent.com/u/86853033?v=4" height="150px">
+        </td>
+        <td>
+            <img src="https://avatars.githubusercontent.com/u/62453211?v=4" height="150px"></td>
+        </td>
+        <td>
+            <img src="https://avatars.githubusercontent.com/u/85588757?v=4" height="150px"></td>
+        </td>
+    </tr>
+    <tr align="center">
+        <td>
+        <a href="https://github.com/sucodelarangela">Angela Caldas</a>
+        </td>
+        <td>
+        <a href="https://github.com/ANNEBORTOLI">Anne Bortoli</a>
+        </td>
+        <td>
+        <a href="https://github.com/catiuu">Catiussia Nascimento</a>
+        </td>
+    </tr>
+</table>
+>>>>>>> 6a8161b0f008f9ed4af7f0153fbea2b16c498c63
