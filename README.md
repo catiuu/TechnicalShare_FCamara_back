@@ -57,6 +57,27 @@
 
 ## Contribuídoras
 
-- Angela Caldas
-- Anne Bortoli
-- Catiussia Nascimento
+<table>
+    <tr align="center">
+        <td>
+            <img src="https://avatars.githubusercontent.com/u/86853033?v=4" height="150px">
+        </td>
+        <td>
+            <img src="https://avatars.githubusercontent.com/u/62453211?v=4" height="150px"></td>
+        </td>
+        <td>
+            <img src="https://avatars.githubusercontent.com/u/85588757?v=4" height="150px"></td>
+        </td>
+    </tr>
+    <tr align="center">
+        <td>
+        <a href="https://github.com/sucodelarangela">Angela Caldas</a>
+        </td>
+        <td>
+        <a href="https://github.com/ANNEBORTOLI">Anne Bortoli</a>
+        </td>
+        <td>
+        <a href="https://github.com/catiuu">Catiussia Nascimento</a>
+        </td>
+    </tr>
+</table>
