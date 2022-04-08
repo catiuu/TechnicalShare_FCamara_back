@@ -53,6 +53,18 @@ module.exports = {
         {
           name: "VTex",
         },
+        {
+          name: "Mentoria de Carreira",
+        },
+        {
+          name: "Mentoria",
+        },
+        {
+          name: "Plano de Carreira",
+        },
+        {
+          name: "Desenvolvimento de Carreira",
+        },
       ],
       {},
     );

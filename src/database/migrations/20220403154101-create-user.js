@@ -27,6 +27,14 @@ module.exports = {
       aboutMe: {
         type: Sequelize.STRING,
       },
+      password: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      pronouns: {
+        type: Sequelize.STRING,
+      },
+
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

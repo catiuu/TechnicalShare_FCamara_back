@@ -46,6 +46,10 @@ module.exports = {
           skillId: 6,
         },
         {
+          userId: 3,
+          skillId: 17,
+        },
+        {
           userId: 4,
           skillId: 15,
         },
@@ -58,12 +62,20 @@ module.exports = {
           skillId: 10,
         },
         {
+          userId: 4,
+          skillId: 17,
+        },
+        {
           userId: 5,
           skillId: 11,
         },
         {
           userId: 6,
           skillId: 16,
+        },
+        {
+          userId: 6,
+          skillId: 17,
         },
       ],
       {},

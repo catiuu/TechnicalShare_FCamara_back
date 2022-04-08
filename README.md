@@ -70,3 +70,9 @@
         </td>
     </tr>
 </table>
+
+08/04 - Anne
+
+- [] Implementação do hash da senha com Bcrypt para subir seeders no BD;
+- [] Inclusão das colunas "pronouns" e "password" na tabela Users
+- [] Inclusão das skills "Oferece Mentoria" nas skills.
