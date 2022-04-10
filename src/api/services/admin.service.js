@@ -4,7 +4,7 @@ class Service {
   async fetchAllUsers() {
     const users = await User.findAll({
       attributes: {
-        exclude: ["createdAt", "updatedAt"],
+        exclude: ["createdAt", "updatedAt", "password"],
       },
     });
     return users;
@@ -22,7 +22,7 @@ class Service {
   async fetchAllUserSkills() {
     const userSkills = await User.findAll({
       attributes: {
-        exclude: ["createdAt", "updatedAt"],
+        exclude: ["createdAt", "updatedAt", "password"],
       },
       include: {
         model: Skill,
