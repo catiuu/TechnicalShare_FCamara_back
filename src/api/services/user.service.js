@@ -26,7 +26,7 @@ class Service {
   async updateProfile(userId, newData) {
     const updatedUser = await User.update(
       {
-        phone: newData.phone,
+        jobTitle: newData.jobTitle,
         aboutMe: newData.aboutMe,
         pronouns: newData.pronouns,
       },

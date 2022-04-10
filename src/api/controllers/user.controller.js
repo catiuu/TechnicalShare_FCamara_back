@@ -4,6 +4,7 @@ class Controller {
   async findUser(req, res) {
     try {
       const { email } = req.body;
+
       const response = await userService.findUser(email);
 
       res.json(response);
@@ -14,12 +15,15 @@ class Controller {
 
   async updateProfile(req, res) {
     try {
-      const userId = req.body.id; // req.params.id ???
+      const userId = req.body.id;
       const newProfile = {
-        phone: req.body.phone,
+        jobTitle: req.body.jobTitle,
         aboutMe: req.body.aboutMe,
         pronouns: req.body.pronouns,
       };
+
+      console.log("@@@@@@@@@@@@@@@@@");
+      console.log(newProfile);
       const response = await userService.updateProfile(userId, newProfile);
 
       res.status(201).json(response);

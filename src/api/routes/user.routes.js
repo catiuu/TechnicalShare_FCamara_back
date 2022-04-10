@@ -3,7 +3,7 @@ const router = express.Router();
 const userController = require("../controllers/user.controller");
 
 // Acha um usuário pelo e-mail
-router.get("/", userController.findUser);
+router.post("/", userController.findUser);
 
 /*  */
 // Rota de atualizar Perfil do usuário
