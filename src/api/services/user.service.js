@@ -26,7 +26,7 @@ class Service {
   async updateProfile(userId, newData) {
     const updatedUser = await User.update(
       {
-        phone: newData.phone,
+        jobTitle: newData.jobTitle,
         aboutMe: newData.aboutMe,
         pronouns: newData.pronouns,
       },
@@ -34,10 +34,10 @@ class Service {
         where: {
           id: userId,
         },
-      },
+      }
     );
 
-    return 1;
+    return updatedUser;
   }
 
   async addSkill(userId, skillId) {
@@ -47,7 +47,7 @@ class Service {
         skillId,
       },
     });
-
+    
     if (!found) {
       await UserSkill.create({
         userId,
