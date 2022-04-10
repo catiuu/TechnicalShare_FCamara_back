@@ -1,9 +1,4 @@
-const {
-  User,
-  Technology,
-  Schedule,
-  UserTechnology,
-} = require("../../database/models");
+const { User, Skill } = require("../../database/models");
 
 class Service {
   async fetchAllUsers() {
@@ -15,31 +10,31 @@ class Service {
     return users;
   }
 
-  async fetchAllTech() {
-    const techs = await Technology.findAll({
+  async fetchAllSkills() {
+    const skills = await Skill.findAll({
       attributes: {
         exclude: ["createdAt", "updatedAt"],
       },
     });
-    return techs;
+    return skills;
   }
 
-  async fetchAllSchedules() {
-    const schedules = await Schedule.findAll({
+  async fetchAllUserSkills() {
+    const userSkills = await User.findAll({
       attributes: {
         exclude: ["createdAt", "updatedAt"],
       },
-    });
-    return schedules;
-  }
-
-  async fetchAllUsersTech() {
-    const userTech = await UserTechnology.findAll({
-      attributes: {
-        exclude: ["createdAt", "updatedAt"],
+      include: {
+        model: Skill,
+        through: {
+          attributes: [],
+        },
+        attributes: {
+          exclude: ["createdAt", "updatedAt"],
+        },
       },
     });
-    return userTech;
+    return userSkills;
   }
 }
 

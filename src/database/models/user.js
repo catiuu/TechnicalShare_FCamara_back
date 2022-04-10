@@ -4,29 +4,21 @@ module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     static associate(models) {
       // define association here
-      User.belongsToMany(models.Technology, {
-        through: models.UserTechnology,
+      User.belongsToMany(models.Skill, {
+        through: models.UserSkill,
         foreignKey: "userId",
-      });
-
-      User.belongsToMany(models.User, {
-        through: models.Schedule,
-        as: "User",
-        foreignKey: "userId",
-      });
-
-      User.belongsToMany(models.User, {
-        through: models.Schedule,
-        as: "Mentor",
-        foreignKey: "mentorId",
       });
     }
   }
   User.init(
     {
-      name: DataTypes.STRING,
+      fullName: DataTypes.STRING,
       email: DataTypes.STRING,
       jobTitle: DataTypes.STRING,
+      phone: DataTypes.STRING,
+      aboutMe: DataTypes.STRING,
+      password: DataTypes.STRING,
+      pronouns: DataTypes.STRING,
     },
     {
       sequelize,

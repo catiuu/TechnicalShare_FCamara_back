@@ -1,28 +1,23 @@
 const AdminService = require("../services/admin.service");
 
 class Controller {
-  // Lista todos os Usuários cadastrados no BD
+  // Lista todos os Users
   async fetchAllUsers(req, res) {
     const response = await AdminService.fetchAllUsers();
     //res.render("users", { msg: "testando" });
     res.json(response);
   }
 
-  // Lista todas as Tecnologias cadastradas no BD
-  async fetchAllTech(req, res) {
-    const response = await AdminService.fetchAllTech();
+  // Lista todas os Skills
+  async fetchAllSkills(req, res) {
+    const response = await AdminService.fetchAllSkills();
+
     res.json(response);
   }
 
-  // Lista todos os Agendamentos
-  async fetchAllSchedules(req, res) {
-    const response = await AdminService.fetchAllSchedules();
-    res.json(response);
-  }
-
-  // Lista todos os usuários e com suas technologias
-  async fetchAllUsersTech(req, res) {
-    const response = await AdminService.fetchAllUsersTech();
+  // Lista todas os Users e suas Skills
+  async fetchAllUserSkills(req, res) {
+    const response = await AdminService.fetchAllUserSkills();
 
     res.json(response);
   }

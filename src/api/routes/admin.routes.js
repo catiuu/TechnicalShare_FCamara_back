@@ -1,14 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const AdminController = require("../controllers/admin.controller");
+const Controller = require("../controllers/admin.controller");
 
-/* GET users listing. */
-router.get("/users", AdminController.fetchAllUsers);
+/* GET de Todas as tabelas do BD. */
+router.get("/users", Controller.fetchAllUsers);
 
-router.get("/techs", AdminController.fetchAllTech);
+router.get("/skills", Controller.fetchAllSkills);
 
-router.get("/schedules", AdminController.fetchAllSchedules);
-
-router.get("/users/techs", AdminController.fetchAllUsersTech);
+/* GET de Buscas de Users por technologia. */
+router.get("/users/skills", Controller.fetchAllUserSkills);
 
 module.exports = router;

@@ -1,23 +1,23 @@
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class Technology extends Model {
+  class Skill extends Model {
     static associate(models) {
       // define association here
-      Technology.belongsToMany(models.User, {
-        through: models.UserTechnology,
-        foreignKey: "technologyId",
+      Skill.belongsToMany(models.User, {
+        through: models.UserSkill,
+        foreignKey: "skillId",
       });
     }
   }
-  Technology.init(
+  Skill.init(
     {
       name: DataTypes.STRING,
     },
     {
       sequelize,
-      modelName: "Technology",
+      modelName: "Skill",
     },
   );
-  return Technology;
+  return Skill;
 };

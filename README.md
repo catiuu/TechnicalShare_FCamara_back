@@ -40,17 +40,46 @@
     npx sequelize db:seed:all
 ```
 
-# Dia 04/04
-
-- [x] Melhorando a estrutura do projeto com criação do diretório API e inclusão das pastas routes, controllers, services.
-
-- [x] Criação de rodas '/admin' para visualização das tabelas no Postman.  
-       obs: Usada somente para fins de desenvolvimento, uma vez que facilita a visualização do que já está inserido no BD.
-
-- [] EM DESENVOLVIMENTO: Até amanhã concluo as queries que iremos usar para fazer a funcionalidades do projeto (login, busca funcionário, agendamentos);
-
----
-
-**Repositório de Frontend:** :globe_with_meridians: https://github.com/catiuu/TechnicalShare_FCamara_front
+=======
+**Repositório de Frontend:** https://github.com/catiuu/TechnicalShare_FCamara_front
 
 **URL da aplicação funcionando**:
+
+## Contribuídoras
+
+<table>
+    <tr align="center">
+        <td>
+            <img src="https://avatars.githubusercontent.com/u/86853033?v=4" height="150px">
+        </td>
+        <td>
+            <img src="https://avatars.githubusercontent.com/u/62453211?v=4" height="150px"></td>
+        </td>
+        <td>
+            <img src="https://avatars.githubusercontent.com/u/85588757?v=4" height="150px"></td>
+        </td>
+    </tr>
+    <tr align="center">
+        <td>
+        <a href="https://github.com/sucodelarangela">Angela Caldas</a>
+        </td>
+        <td>
+        <a href="https://github.com/ANNEBORTOLI">Anne Bortoli</a>
+        </td>
+        <td>
+        <a href="https://github.com/catiuu">Catiussia Nascimento</a>
+        </td>
+    </tr>
+</table>
+
+08/04 - Anne
+
+- [x] Implementação do hash da senha com Bcrypt para subir seeders no BD;
+- [x] Inclusão das colunas "pronouns" e "password" na tabela Users
+- [x] Inclusão das skills "Oferece Mentoria" nas skills.
+- [x] Criação dos endpoints:
+  - achar user por e-mail;
+  - editar perfil do usuário;
+  - adicionar skill do usuário;
+  - deletar skill do usuário;
+    > > > > > > > 1c9f62e157622f33959faf6109ebf90555e3a1d6
