@@ -1,6 +1,38 @@
 const userService = require("../services/user.service");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 class Controller {
+  async login(req, res) {
+    const { email, password } = req.body;
+
+    try {
+      const user = await userService.findUser(email);
+
+      if (!user) {
+        return res
+          .status(400)
+          .json({ mensagem: "O usuario não foi encontrado." });
+      }
+
+      const correctPassword = await bcrypt.compare(password, user.password);
+
+      if (!correctPassword) {
+        return res
+          .status(400)
+          .json({ mensagem: "Email e senha não conferem." });
+      }
+
+      const token = jwt.sign({ id: user.id }, process.env.SENHA_JWT, {
+        expiresIn: "1h",
+      });
+
+      return res.status(200).json({ token });
+    } catch (error) {
+      return res.status(500).json({ mensagem: error.message });
+    }
+  }
+
   async findUser(req, res) {
     try {
       const { email } = req.body;

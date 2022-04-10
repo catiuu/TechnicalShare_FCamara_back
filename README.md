@@ -40,6 +40,7 @@
     npx sequelize db:seed:all
 ```
 
+=======
 **Repositório de Frontend:** https://github.com/catiuu/TechnicalShare_FCamara_front
 
 **URL da aplicação funcionando**:
@@ -81,3 +82,4 @@
   - editar perfil do usuário;
   - adicionar skill do usuário;
   - deletar skill do usuário;
+    > > > > > > > 1c9f62e157622f33959faf6109ebf90555e3a1d6

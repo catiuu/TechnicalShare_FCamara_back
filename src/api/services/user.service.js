@@ -34,10 +34,10 @@ class Service {
         where: {
           id: userId,
         },
-      },
+      }
     );
 
-    return 1;
+    return updatedUser;
   }
 
   async addSkill(userId, skillId) {
@@ -47,7 +47,7 @@ class Service {
         skillId,
       },
     });
-
+    
     if (!found) {
       await UserSkill.create({
         userId,
