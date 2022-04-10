@@ -1,5 +1,6 @@
 const userService = require("../services/user.service");
 const bcrypt = require("bcrypt");
+require("dotenv-safe").config();
 const jwt = require("jsonwebtoken");
 
 class Controller {
@@ -20,7 +21,7 @@ class Controller {
       if (!correctPassword) {
         return res
           .status(400)
-          .json({ mensagem: "Email e senha não conferem." });
+          .json({ mensagem: "E-mail ou senha não conferem." });
       }
 
       const token = jwt.sign({ id: user.id }, process.env.SENHA_JWT, {
@@ -33,20 +34,9 @@ class Controller {
     }
   }
 
-  async findUser(req, res) {
-    try {
-      const { email } = req.body;
-      const response = await userService.findUser(email);
-
-      res.json(response);
-    } catch (error) {
-      res.status(200).json({ message: error.message });
-    }
-  }
-
   async updateProfile(req, res) {
     try {
-      const userId = req.body.id; // req.params.id ???
+      const userId = req.body.id;
       const newProfile = {
         jobTitle: req.body.jobTitle,
         aboutMe: req.body.aboutMe,
@@ -64,7 +54,6 @@ class Controller {
     try {
       const { userId, skillId } = req.body;
       const response = await userService.addSkill(userId, skillId);
-
       res.status(201).json(response);
     } catch (error) {
       res.status(500).json({ error: error.message });
@@ -72,10 +61,34 @@ class Controller {
   }
 
   async deleteSkill(req, res) {
-    const { userId, skillId } = req.body;
-    const response = await userService.deleteSkill(userId, skillId);
+    try {
+      const { userId, skillId } = req.body;
+      const response = await userService.deleteSkill(userId, skillId);
+      res.status(200).json(response);
+    } catch (error) {
+      res.status(500).json(error);
+    }
+  }
 
-    res.status(200).json(response);
+  async findUsers(req, res) {
+    try {
+      const searchInput = req.body.searchInput;
+      const response = await userService.findUsers(searchInput);
+      res.status(200).json(response);
+    } catch (error) {
+      res.status(500).json(error);
+    }
+  }
+
+  async findUserByPk(req, res) {
+    try {
+      const response = await userService.findUserByPk(req.body.id);
+      res.status(200).json(response);
+    } catch (error) {
+      res.status(500).json(error);
+    }
+
+    const response = await userService.findUserByPk(req.body.id);
   }
 }
 
