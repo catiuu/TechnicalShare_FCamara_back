@@ -71,15 +71,3 @@
         </td>
     </tr>
 </table>
-
-08/04 - Anne
-
-- [x] Implementação do hash da senha com Bcrypt para subir seeders no BD;
-- [x] Inclusão das colunas "pronouns" e "password" na tabela Users
-- [x] Inclusão das skills "Oferece Mentoria" nas skills.
-- [x] Criação dos endpoints:
-  - achar user por e-mail;
-  - editar perfil do usuário;
-  - adicionar skill do usuário;
-  - deletar skill do usuário;
-    > > > > > > > 1c9f62e157622f33959faf6109ebf90555e3a1d6

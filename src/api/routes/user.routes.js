@@ -2,15 +2,17 @@ const express = require("express");
 const router = express.Router();
 const userController = require("../controllers/user.controller");
 
+// Faz login do Usuário e retorna um token
 router.post("/login", userController.login);
-// Acha um usuário pelo e-mail
-router.get("/", userController.findUser);
-/*  */
 // Rota de atualizar Perfil do usuário
 router.patch("/profile", userController.updateProfile);
 //Rota de adicionar Skill do usuário
-router.post("/skills", userController.addSkill);
+router.post("/addskills", userController.addSkill);
 // Rota para deletar uma skill do usuário
-router.delete("/skills", userController.deleteSkill);
+router.post("/removeskills", userController.removeSkill);
+// Busca lista de usuários com base no parâmetro de busca
+router.post("/search", userController.findUsers);
+// Busca um usuário pelo id
+router.post("/id", userController.findUserByPk);
 
 module.exports = router;
