@@ -1,4 +1,5 @@
 const { User, Skill, UserSkill } = require("../../database/models");
+const { Op, Sequelize } = require("sequelize");
 
 class Service {
   async findUser(email) {
@@ -34,7 +35,7 @@ class Service {
         where: {
           id: userId,
         },
-      }
+      },
     );
 
     return updatedUser;
@@ -47,25 +48,81 @@ class Service {
         skillId,
       },
     });
-    
+
     if (!found) {
       await UserSkill.create({
         userId,
         skillId,
       });
 
-      return 1;
+      return `ok`;
     }
   }
 
-  async deleteSkill(userId, skillId) {
+  async removeSkill(userId, skillId) {
     await UserSkill.destroy({
       where: {
         userId,
         skillId,
       },
     });
-    return 1;
+    return "ok";
+  }
+
+  async findUsers(searchInput) {
+    const lowerInput = searchInput.toLowerCase();
+
+    const users = await User.findAll({
+      where: {
+        [Op.or]: [
+          Sequelize.where(Sequelize.fn("lower", Sequelize.col("fullName")), {
+            [Op.like]: `%${lowerInput}%`,
+          }),
+          Sequelize.where(Sequelize.fn("lower", Sequelize.col("jobTitle")), {
+            [Op.like]: `%${lowerInput}%`,
+          }),
+          Sequelize.where(Sequelize.fn("lower", Sequelize.col("name")), {
+            [Op.like]: `%${lowerInput}%`,
+          }),
+        ],
+      },
+      attributes: {
+        exclude: ["createdAt", "updatedAt", "password"],
+      },
+      include: {
+        model: Skill,
+        through: {
+          attributes: [],
+        },
+        attributes: {
+          exclude: ["createdAt", "updatedAt"],
+        },
+      },
+    });
+
+    return users;
+  }
+
+  async findUserByPk(id) {
+    const user = await User.findOne({
+      where: {
+        id,
+      },
+      attributes: {
+        exclude: ["createdAt", "updatedAt", "password"],
+      },
+      include: {
+        model: Skill,
+        through: {
+          attributes: [],
+        },
+        attributes: {
+          exclude: ["createdAt", "updatedAt"],
+        },
+      },
+    });
+
+    return user;
   }
 }
 
