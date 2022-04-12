@@ -54,16 +54,18 @@ class Controller {
     try {
       const { userId, skillId } = req.body;
       const response = await userService.addSkill(userId, skillId);
+
       res.status(201).json(response);
     } catch (error) {
       res.status(500).json({ error: error.message });
     }
   }
 
-  async deleteSkill(req, res) {
+  async removeSkill(req, res) {
     try {
       const { userId, skillId } = req.body;
-      const response = await userService.deleteSkill(userId, skillId);
+      const response = await userService.removeSkill(userId, skillId);
+
       res.status(200).json(response);
     } catch (error) {
       res.status(500).json(error);
@@ -87,8 +89,6 @@ class Controller {
     } catch (error) {
       res.status(500).json(error);
     }
-
-    const response = await userService.findUserByPk(req.body.id);
   }
 }
 

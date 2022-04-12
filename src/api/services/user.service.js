@@ -55,18 +55,18 @@ class Service {
         skillId,
       });
 
-      return;
+      return `ok`;
     }
   }
 
-  async deleteSkill(userId, skillId) {
+  async removeSkill(userId, skillId) {
     await UserSkill.destroy({
       where: {
         userId,
         skillId,
       },
     });
-    return;
+    return "ok";
   }
 
   async findUsers(searchInput) {
@@ -99,6 +99,7 @@ class Service {
         },
       },
     });
+
     return users;
   }
 
@@ -108,7 +109,7 @@ class Service {
         id,
       },
       attributes: {
-        exclude: ["createdAt", "updatedAt"],
+        exclude: ["createdAt", "updatedAt", "password"],
       },
       include: {
         model: Skill,
