@@ -2,6 +2,19 @@ require("dotenv-safe").config();
 
 const { DB_USER, DB_PASSWORD, DB_NAME, DB_HOST, DB_PORT } = process.env;
 
+let opcoes;
+
+if (process.env.NODE_ENV == "production") {
+  opcoes = {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false,
+    },
+  };
+} else {
+  opcoes = {};
+}
+
 module.exports = {
   username: DB_USER,
   password: DB_PASSWORD,
@@ -9,7 +22,5 @@ module.exports = {
   host: DB_HOST,
   port: DB_PORT,
   dialect: "postgres",
-  ssl: {
-    rejectUnauthorized: false,
-  }
+  dialectOptions: opcoes,
 };
