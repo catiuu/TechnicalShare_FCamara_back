@@ -7,7 +7,11 @@ module.exports = {
       [
         {
           userId: 1,
-          skillId: 7,
+          skillId: 1,
+        },
+        {
+          userId: 1,
+          skillId: 11,
         },
         {
           userId: 1,
@@ -27,11 +31,23 @@ module.exports = {
         },
         {
           userId: 2,
-          skillId: 13,
+          skillId: 4,
         },
         {
           userId: 2,
-          skillId: 14,
+          skillId: 8,
+        },
+        {
+          userId: 2,
+          skillId: 12,
+        },
+        {
+          userId: 2,
+          skillId: 16,
+        },
+        {
+          userId: 3,
+          skillId: 3,
         },
         {
           userId: 3,
@@ -47,11 +63,15 @@ module.exports = {
         },
         {
           userId: 3,
-          skillId: 17,
+          skillId: 7,
+        },
+        {
+          userId: 3,
+          skillId: 20,
         },
         {
           userId: 4,
-          skillId: 15,
+          skillId: 8,
         },
         {
           userId: 4,
@@ -59,23 +79,59 @@ module.exports = {
         },
         {
           userId: 4,
-          skillId: 10,
+          skillId: 14,
         },
         {
           userId: 4,
-          skillId: 17,
-        },
-        {
-          userId: 5,
-          skillId: 11,
-        },
-        {
-          userId: 6,
           skillId: 16,
         },
         {
+          userId: 4,
+          skillId: 19,
+        },
+        {
+          userId: 5,
+          skillId: 9,
+        },
+        {
+          userId: 5,
+          skillId: 14,
+        },
+        {
+          userId: 5,
+          skillId: 16,
+        },
+        {
+          userId: 5,
+          skillId: 19,
+        },
+        {
           userId: 6,
-          skillId: 17,
+          skillId: 1,
+        },
+        {
+          userId: 6,
+          skillId: 4,
+        },
+        {
+          userId: 6,
+          skillId: 13,
+        },
+        {
+          userId: 7,
+          skillId: 10,
+        },
+        {
+          userId: 7,
+          skillId: 14,
+        },
+        {
+          userId: 5,
+          skillId: 16,
+        },
+        {
+          userId: 5,
+          skillId: 19,
         },
       ],
       {},
