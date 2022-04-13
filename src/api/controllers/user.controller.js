@@ -31,7 +31,7 @@ class Controller {
 
       res.status(201).json(response);
     } catch (error) {
-      res.status(500).json(error);
+      res.status(500).json({ error: error.message });
     }
   }
 
@@ -53,7 +53,7 @@ class Controller {
 
       res.status(201).json({ message: "ok" });
     } catch (error) {
-      res.status(500).json(error);
+      res.status(500).json({ error: error.message });
     }
   }
 
@@ -63,7 +63,7 @@ class Controller {
       const response = await userService.findUsers(searchInput);
       res.status(200).json(response);
     } catch (error) {
-      res.status(500).json(error);
+      res.status(500).json({ error: error.message });
     }
   }
 
@@ -72,7 +72,7 @@ class Controller {
       const response = await userService.findUserByPk(req.body.id);
       res.status(200).json(response);
     } catch (error) {
-      res.status(500).json(error);
+      res.status(500).json({ error: error.message });
     }
   }
 }
