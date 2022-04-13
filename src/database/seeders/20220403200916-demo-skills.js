@@ -18,9 +18,6 @@ module.exports = {
           name: "Nodejs",
         },
         {
-          name: "C++",
-        },
-        {
           name: "SQL",
         },
         {
@@ -57,13 +54,16 @@ module.exports = {
           name: "Mentoria de Carreira",
         },
         {
-          name: "Mentoria",
-        },
-        {
-          name: "Plano de Carreira",
-        },
-        {
           name: "Desenvolvimento de Carreira",
+        },
+        {
+          name: "Photoshop",
+        },
+        {
+          name: "Design Thinking",
+        },
+        {
+          name: "Metodologias Ágeis",
         },
       ],
       {},
