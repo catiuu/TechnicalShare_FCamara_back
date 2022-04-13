@@ -2,10 +2,13 @@ const { User, Skill, UserSkill } = require("../../database/models");
 const { Op, Sequelize } = require("sequelize");
 
 class Service {
-  async findUser(email) {
+  async login(email, password) {
+    console.log("SERVICE LOGIN");
+
     const user = await User.findOne({
       where: {
         email,
+        password,
       },
       attributes: {
         exclude: ["createdAt", "updatedAt"],
@@ -21,6 +24,7 @@ class Service {
       },
     });
 
+    console.log(user);
     return user;
   }
 
@@ -101,6 +105,28 @@ class Service {
     });
 
     return users;
+  }
+
+  async findUser(email) {
+    const user = await User.findOne({
+      where: {
+        email,
+      },
+      attributes: {
+        exclude: ["createdAt", "updatedAt"],
+      },
+      include: {
+        model: Skill,
+        through: {
+          attributes: [],
+        },
+        attributes: {
+          exclude: ["createdAt", "updatedAt"],
+        },
+      },
+    });
+
+    return user;
   }
 
   async findUserByPk(id) {
