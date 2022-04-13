@@ -4,7 +4,7 @@ const { DB_USER, DB_PASSWORD, DB_NAME, DB_HOST, DB_PORT } = process.env;
 
 let opcoes;
 
-if (process.env.NODE_ENV == "production") {
+if (process.env.NODE_ENV === "production") {
   opcoes = {
     ssl: {
       require: true,
