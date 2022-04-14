@@ -126,7 +126,7 @@ module.exports = {
           skillId: 14,
         },
       ],
-      {},
+      {}
     );
   },
 
