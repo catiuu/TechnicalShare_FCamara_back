@@ -3,15 +3,13 @@ const { Op, Sequelize } = require("sequelize");
 
 class Service {
   async login(email, password) {
-    console.log("SERVICE LOGIN");
-
     const user = await User.findOne({
       where: {
         email,
         password,
       },
       attributes: {
-        exclude: ["createdAt", "updatedAt"],
+        exclude: ["createdAt", "updatedAt", "password"],
       },
       include: {
         model: Skill,
@@ -24,7 +22,6 @@ class Service {
       },
     });
 
-    console.log(user);
     return user;
   }
 

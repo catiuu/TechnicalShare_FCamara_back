@@ -125,14 +125,6 @@ module.exports = {
           userId: 7,
           skillId: 14,
         },
-        {
-          userId: 5,
-          skillId: 16,
-        },
-        {
-          userId: 5,
-          skillId: 19,
-        },
       ],
       {},
     );
