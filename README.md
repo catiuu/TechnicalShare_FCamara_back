@@ -64,7 +64,9 @@ O Technical Share tem como proposta ser uma plataforma de busca que possibilita 
 
 - **JavaScript**
 - **Node.Js**
-
+- **Sequelize**
+- **Express**
+- **PostegreSQL**
 ---
 
 ## 🚀 Desenvolvedoras:
