@@ -10,7 +10,7 @@
 Este é o bak-end da aplicação web desenvolvida durante a etapa de hackaton do Programa de Formação da FCamara.
 O Technical Share tem como proposta ser uma plataforma de busca que possibilita o colaborador encontrar de forma rápida e fácil, colegas mais experientes em determinada tecnologia, que possa auxiliá-lo com dúvidas rápidas ou até mesmo uma mentoria de carreira.
 
-💻 [Acesse a aplicação]()
+💻 [Acesse a aplicação](https://technicalsherfront-api.herokuapp.com/)
 
 :globe_with_meridians: [Front-end da aplicação](https://github.com/catiuu/TechnicalShare_FCamara_front)
 
